@@ -23,7 +23,7 @@ gcc
 make
 GNU scientific library
 
-$sudo apt-get install libgsl-dev g++ gcc make
+$sudo apt-get install libgsl-dev g++ gcc make libboost-all-dev
 
 $ make
 
