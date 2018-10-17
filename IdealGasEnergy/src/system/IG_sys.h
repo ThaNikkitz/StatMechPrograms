@@ -7,7 +7,7 @@
 #include <string>
 #include <stdlib.h>
 #include <fstream>
-//#include <iostream>
+#include <iostream>
 #include <vector>
 #include "../Eigen/Dense"
 #include <boost/multi_array.hpp>

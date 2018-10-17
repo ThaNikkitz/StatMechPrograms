@@ -6,10 +6,10 @@
 #
 
 # define the C compiler to use
-CC = g++
+CC = gcc
 
 # define any compile-time flags
-CFLAGS = -Wall -g 
+CFLAGS =
 
 # define any directories containing header files other than /usr/include
 #
@@ -23,10 +23,11 @@ CFLAGS = -Wall -g
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
 #   option, something like (this will link in libmylib.so and libm.so:
-LIBS = -lm -lgsl -lgslcblas 
+LIBS =  
 
 # define the C++ source files
-SRCS = src/args/Arguments.cc src/utils/debug.cc src/system/IG_sys.cc src/gromos/Exception.cc src/utils/utils.cc program/IdealGas.cc 
+SRCS = program/velocityVerletSho.c
+
 # define the C object files 
 #
 # This uses Suffix Replacement within a macro:
@@ -35,10 +36,10 @@ SRCS = src/args/Arguments.cc src/utils/debug.cc src/system/IG_sys.cc src/gromos/
 # Below we are replacing the suffix .c of all words in the macro SRCS
 # with the .o suffix
 #
+#OBJS = $(SRCS:.c=.o)
 OBJS = $(SRCS:.cc=.o)
-
 # define the executable file 
-MAIN = IdealGas
+MAIN = velocityVerletSho
 
 #
 # The following part of the makefile is generic; it can be used to 
@@ -49,7 +50,7 @@ MAIN = IdealGas
 .PHONY: depend clean
 
 all:	$(MAIN)
-	@echo IdealGas  has been compiled
+	@echo  velocityVerletSho has been compiled
 $(MAIN): $(OBJS) 
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
@@ -67,4 +68,5 @@ depend:	$(SRCS)
 	makedepend $(INCLUDES) $^
 
 # DO NOT DELETE THIS LINE -- make depend needs it
+
 
