@@ -1,6 +1,7 @@
 
 #include <string>
 
+#include <iostream>
 #include "Arguments.h"
 #include <algorithm>
 #include <sstream>
